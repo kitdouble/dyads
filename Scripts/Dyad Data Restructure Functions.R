@@ -36,8 +36,8 @@ ind_to_pair <- function(data, CoupleID, labels = c("A", "P"), Between_dyad_vars 
   
   
   # Split
-  tempA <- data[!duplicated(data[,"CoupleID"]),]
-  tempB <- data[duplicated(data[,"CoupleID"]),]
+  tempA <- data[!duplicated(data[,CoupleID]),]
+  tempB <- data[duplicated(data[,CoupleID]),]
   
   # Label
   ta <- as.data.frame(tempA[,!names(tempA) %in% c(CoupleID, Between_dyad_vars)])
@@ -60,8 +60,8 @@ ind_to_pair <- function(data, CoupleID, labels = c("A", "P"), Between_dyad_vars 
   ####
   
   # Split
-  tempA <- data[data[,Distinguisher] == unique(data[,Distinguisher])[1],]
-  tempB <- data[data[,Distinguisher] == unique(data[,Distinguisher])[2],]
+  tempA <- data[!duplicated(data[,CoupleID]),]
+  tempB <- data[duplicated(data[,CoupleID]),]
   
   # Label
   ta <- as.data.frame(tempA[,!names(tempA) %in% c(CoupleID, Between_dyad_vars)])
