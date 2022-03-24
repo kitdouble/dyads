@@ -19,6 +19,6 @@ ind_to_pair(data = data, CoupleID = "CoupleID")
 
 
 # e.g. with ARC data
-df <- ind_to_dyad(data = mydata, CoupleID = "Couple_ID", Distinguisher = "T1A_Demo_Gender", labels = c("Male", "Female"), Between_dyad_vars = c("Prolific_ID","Partner_ID", "Couple_ID", "Role"))
+df <- ind_to_dyad(data = mydata, CoupleID = "Couple_ID", Distinguisher = "T1A_Demo_Gender", labels = c("Male", "Female"))
 
 ```
